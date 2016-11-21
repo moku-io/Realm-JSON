@@ -85,10 +85,10 @@ You should specify the inbound and outbound JSON mapping on your `RLMObject` sub
       };
     }
 
-JSON preprocessing can be done by implementing `jsonPreprocessing:` method:
+JSON preprocessing can be done by implementing `jsonPreprocessing:` static method:
 
 ```ObjC
-- (NSDictionary *)preprocessedJSON:(NSDictionary *)dictionary {
++ (NSDictionary *)preprocessedJSON:(NSDictionary *)dictionary {
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] initWithDictionary:dictionary];
     dict[@"releaseCount"] = @(0);
     return dict.copy;
