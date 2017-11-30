@@ -48,8 +48,11 @@
             primaryKeyIsEmpty = (property.isPrimary &&
                                  !valuesAreEqual(value, selfValue)
                                  );
-            
-            if (primaryKeyIsEmpty || !property.isPrimary) {
+          
+          BOOL validValue = value != nil && value != (id)[NSNull null];
+          
+            if ((primaryKeyIsEmpty || !property.isPrimary) && validValue) {
+
                 [self setValue:value forKeyPath:property.name];
             }
         

@@ -33,3 +33,7 @@
 - (NSArray *)JSONArray;
 
 @end
+
+@interface NSDictionary (Inverse)
+- (NSDictionary *)inverseDictionary;
+@end

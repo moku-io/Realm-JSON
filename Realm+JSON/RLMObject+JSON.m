@@ -432,6 +432,16 @@ static NSInteger const kCreateBatchSize = 100;
 
 @end
 
+@implementation NSDictionary (Inverse)
+- (NSDictionary *)inverseDictionary {
+  NSMutableDictionary *swapped = [NSMutableDictionary new];
+  [self enumerateKeysAndObjectsUsingBlock:^(id key, id value, BOOL *stop) {
+    swapped[value] = key;
+  }];
+  return [swapped copy];
+}
+@end
+
 @implementation RLMArray (JSON)
 
 - (NSArray *)NSArray {
